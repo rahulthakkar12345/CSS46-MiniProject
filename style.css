@@ -1,0 +1,52 @@
+body {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #222;
+}
+
+/* 1 */
+a {
+	text-decoration: none;
+	color: white;
+	font-family: sans-serif;
+	font-size: 40px;
+	border: 3px solid white;
+	padding: 40px 80px;
+	transition: all 0.3s;
+	position: relative;
+	/* 4.2 */
+	overflow: hidden ;
+}
+
+/* 2 */
+/* we will first change the background color on hover */
+a:hover {
+	background-color: #F44336;
+}
+
+/* 3 */
+/* To resemble the flash like animation,
+we will pass the white rectangle on hover  */
+a:before {
+	content: '';
+	background-color: white;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	/* set the height of the empty content */
+	height: 50px;
+	/* set the position with transform property */
+	transform: translateX(-100%) rotate(45deg);
+	transition: all 0.3s;
+}
+
+/* 4.1 */
+/* On hover, we want to only change the horizontal x- axis,
+we will also set the rotate() to same as before so the position
+does not change on hover and just x-axis is manipulated */
+a:hover:before {
+ 	transform: translateX(100%) rotate(45deg);
+}
